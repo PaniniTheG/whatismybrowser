@@ -29,7 +29,7 @@
             border-left: 5px solid #0056b3;
             overflow-x: auto;
             white-space: pre-wrap; /* Damit lange Zeilen umbrechen */
-            word-wrap: break-word; /* Für ältere Browser */
+            word-wrap: break-word; /* FÃ¼r Ã¤ltere Browser */
         }
         p {
             margin-top: 20px;
@@ -39,7 +39,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Informationen über deinen Browser</h1>
+        <h1>Informationen Ã¼ber deinen Browser</h1>
         <p>Der User-Agent String deines Browsers ist:</p>
         <pre id="userAgentInfo"></pre>
         <p>Weitere Details (von JavaScript versucht zu extrahieren):</p>
@@ -57,7 +57,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const userAgent = navigator.userAgent;
-            document.getElementById('userAgentInfo').textContent = userAgent;
+            document.getElementById('userAgentInfo').textContent = navigator.appVersion;
             document.getElementById('platform').textContent = navigator.platform;
             document.getElementById('language').textContent = navigator.language;
             document.getElementById('cookiesEnabled').textContent = navigator.cookieEnabled ? 'Ja' : 'Nein';
@@ -113,4 +113,5 @@
         });
     </script>
 </body>
+
 </html>
