@@ -57,7 +57,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const userAgent = navigator.userAgent;
-            document.getElementById('userAgentInfo').textContent = navigator.appVersion;
+            document.getElementById('userAgentInfo').textContent = window.chrome;
             document.getElementById('platform').textContent = navigator.platform;
             document.getElementById('language').textContent = navigator.language;
             document.getElementById('cookiesEnabled').textContent = navigator.cookieEnabled ? 'Ja' : 'Nein';
@@ -115,4 +115,5 @@
 </body>
 
 </html>
+
 
