@@ -40,7 +40,7 @@
 <body>
     <div class="container">
         <h1>Informationen über deinen Browser</h1>
-        <p>Der User-Agent String deines Browsers ist: neu neu</p>
+        <p>Der User-Agent String deines Browsers ist:</p>
         <pre id="userAgentInfo"></pre>
         <p>Weitere Details (von JavaScript versucht zu extrahieren):</p>
         <ul>
@@ -51,17 +51,25 @@
             <li><b>Sprache:</b> <span id="language"></span></li>
             <li><b>Cookies aktiviert:</b> <span id="cookiesEnabled"></span></li>
             <li><b>Online Status:</b> <span id="onlineStatus"></span></li>
+			<li><b>Window Chrome:</b> <span id="windowChrome"></span></li>
+
         </ul>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const userAgent = navigator.userAgent;
-            document.getElementById('userAgentInfo').textContent = window.chrome;
+            document.getElementById('userAgentInfo').textContent = navigator.appVersion;
             document.getElementById('platform').textContent = navigator.platform;
             document.getElementById('language').textContent = navigator.language;
             document.getElementById('cookiesEnabled').textContent = navigator.cookieEnabled ? 'Ja' : 'Nein';
             document.getElementById('onlineStatus').textContent = navigator.onLine ? 'Online' : 'Offline';
+            if (window.chrome) {
+                document.getElementById('windowChrome').textContent = 'Verfügbar (Chrome-basierter Browser)';
+            } else {
+                document.getElementById('windowChrome').textContent = 'Nicht verfügbar (Kein Chrome-basierter Browser)';
+            }
+
 
             let browserName = "Unbekannt";
             let browserVersion = "Unbekannt";
@@ -113,8 +121,4 @@
         });
     </script>
 </body>
-
 </html>
-
-
-
